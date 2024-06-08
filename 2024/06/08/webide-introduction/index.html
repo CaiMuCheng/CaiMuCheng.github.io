@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>“宇宙最强” IDE —— Web IDE | 苏沐橙's blog</title><meta name="author" content="苏沐橙好菜"><meta name="copyright" content="苏沐橙好菜"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="先说几句：Web IDE 的作者：bzy（QQ: 204490258），是我入圈多年以来最让我无语的一个人（熟悉我的人都知道我是 ModPE 转 Android 圈，不过在这期间我也学习了很多新东西（像 nodejs，docker 等等）我从没有用博客写过某个人，但本次主人公 bzy 我真的忍不了 这人做了啥？这人可能是对前端太执着了，说出过很多逆天言语，这里我也放了几张图：   首先他自己口口声">
+<meta property="og:type" content="article">
+<meta property="og:title" content="“宇宙最强” IDE —— Web IDE">
+<meta property="og:url" content="https://caimucheng.github.io/2024/06/08/webide-introduction/index.html">
+<meta property="og:site_name" content="苏沐橙&#39;s blog">
+<meta property="og:description" content="先说几句：Web IDE 的作者：bzy（QQ: 204490258），是我入圈多年以来最让我无语的一个人（熟悉我的人都知道我是 ModPE 转 Android 圈，不过在这期间我也学习了很多新东西（像 nodejs，docker 等等）我从没有用博客写过某个人，但本次主人公 bzy 我真的忍不了 这人做了啥？这人可能是对前端太执着了，说出过很多逆天言语，这里我也放了几张图：   首先他自己口口声">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://caimucheng.github.io/img/cover_webide_introduction.png">
+<meta property="article:published_time" content="2024-06-08T10:24:06.222Z">
+<meta property="article:modified_time" content="2024-06-08T11:26:50.786Z">
+<meta property="article:author" content="苏沐橙好菜">
+<meta property="article:tag" content="Android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://caimucheng.github.io/img/cover_webide_introduction.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://caimucheng.github.io/2024/06/08/webide-introduction/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '“宇宙最强” IDE —— Web IDE',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-06-08 19:26:50'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/transpancy.css"><meta name="generator" content="Hexo 7.1.1"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/css/minimal.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="苏沐橙's blog"><span class="site-name">苏沐橙's blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">“宇宙最强” IDE —— Web IDE</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-08T10:24:06.222Z" title="发表于 2024-06-08 18:24:06">2024-06-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-08T11:26:50.786Z" title="更新于 2024-06-08 19:26:50">2024-06-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%82%B9%E8%AF%84/">点评</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="“宇宙最强” IDE —— Web IDE"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="先说几句："><a href="#先说几句：" class="headerlink" title="先说几句："></a>先说几句：</h2><p><strong>Web IDE 的作者：bzy</strong>（<strong>QQ: 204490258</strong>），是我入圈多年以来最让我无语的一个人（<br>熟悉我的人都知道我是 ModPE 转 Android 圈，不过在这期间我也学习了很多新东西（像 nodejs，docker 等等）<br>我从没有用博客写过某个人，但本次主人公 bzy 我真的忍不了</p>
+<h2 id="这人做了啥？"><a href="#这人做了啥？" class="headerlink" title="这人做了啥？"></a>这人做了啥？</h2><p>这人可能是对前端太执着了，说出过很多逆天言语，这里我也放了几张图：</p>
+<img src="/img/bzy0.jpg" width="30%" alt="Vue 笑谈" />
+
+<p>首先他自己口口声声称自己是前端，连 Vue 都没用过（甚至这里他还用的是 Vue2），软件叫 WebIDE，结果没有环境只有补全，真的极其可笑。<br>除此之外，他还有更逆天的操作：</p>
+<img src="/img/bzy1.jpg" width="30%" alt="bzy 语录①" />
+
+<p>这里帮大家总结了几点：《JS 原生开发香》、《css &gt; 安卓》、《Vue 听都没听过说自己是前端》、《以为前端行业只招原生开发者，Vue 什么都不是》、《jQuery 用的多》<br>这人怎么说，要是在几年前还能吹吹，但是现在都 2024 年了，谁不知道前端框架里 Vue 是必学的？jQuery 国内用的已经没以前多了，这人只能说是活在过去</p>
+<img src="/img/bzy2.jpg" width="30%" alt="bzy 语录②" />
+
+<p>《没有 Java 源码是解密不了的》、《首创 js 和 html 加密》，真的无敌了！我这里也没乱说，放几张他打包后软件反编译的 Java 代码看看</p>
+<div style="display: flex">
+<img src="/img/bzy_js_api0.jpg" width="60%" alt="Webapp JS API" />
+<img src="/img/bzy_js_api1.jpg" width="60%" alt="Webapp JS API" />
+</div>
+
+<p>可以看到，全是 <strong>@JavaScriptInterface</strong> 注解，使用过 WebView 的朋友应该知道，这个注解是为了向 JS 映射一个 Java 方法或者属性的，他这里是毫无技术含量，反倒也能声称为原创，真的是脸皮厚。对于 js、html 加密，早在之前 AutoJS 就有，甚至之后的 AutoJS Pro 的快照加密。这也能算原创的话，我写个 123 不也能说我原创了数字？真的不如 AutoJS Pro，以前我还对他们有一点仇恨，直到遇到了 Web IDE 作者才让我明白：世界上怎么有如此厚颜无耻之人！</p>
+<img src="/img/bzy3.jpg" width="30%" alt="bzy 语录③" />
+
+<p>这张图不想评价了，下一张吧</p>
+<img src="/img/bzy4.jpg" width="30%" alt="bzy 语录④" />
+
+<p>这张大家当个乐呵就好，足以证明群里大家都对这人很有意见，要不然这位群友也不会这么说</p>
+<img src="/img/bzy5.jpg" width="30%" alt="bzy 语录⑤" />
+
+<p>这张真的太好笑了，前面刚说怎么都是 html 开发，结果自己转手整了个 Android 弹窗（乐），也不排除是这家伙对 WebView 弹窗处理进行了自定义（亦或者没改）<br>到这里知道了为什么群里人都讨厌这家伙，自己没什么技术就在那里原创，不懂装懂还天天说前端比 Android 好的，就像这样：</p>
+<img src="/img/bzy_talk.jpg" width="60%" alt="bzy 语录⑤" />
+
+<p>总座高见！</p>
+<h2 id="我有话说："><a href="#我有话说：" class="headerlink" title="我有话说："></a>我有话说：</h2><p>从这里可以看出，计算机圈不乏还有着许许多多的 “张浩洋”，“张浩洋” 的名言是 —— “我会 Jvav”<br>这位 Web IDE 作者，我也愿称之为下一代 “张浩洋”，而它的 Web IDE，我也愿称为 “Jvav Next Gen”！<br>面对这种计算机圈的乱象，我们一定要扼杀在摇篮里，一但冒头必定后患无穷，正如前阵子闹得沸沸扬扬的 CEC-IDE，堪称 “国产之光”<br>以上就是我所说的，感谢观看</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Android/">Android</a></div><div class="post_share"><div class="social-share" data-image="/img/cover_webide_introduction.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/06/08/node-java/" title="适用于 Android 的 Node.js 调用 Java 解决方案"><img class="cover" src="/img/cover_node_java.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">适用于 Android 的 Node.js 调用 Java 解决方案</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/06/08/node-java/" title="适用于 Android 的 Node.js 调用 Java 解决方案"><img class="cover" src="/img/cover_node_java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-08</div><div class="title">适用于 Android 的 Node.js 调用 Java 解决方案</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">苏沐橙好菜</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/CaiMuCheng"><i class="fab fa-github"></i><span>我的 Github 主页</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客～喵喵喵～</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%88%E8%AF%B4%E5%87%A0%E5%8F%A5%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">先说几句：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E4%BA%BA%E5%81%9A%E4%BA%86%E5%95%A5%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">这人做了啥？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E6%9C%89%E8%AF%9D%E8%AF%B4%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">我有话说：</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/06/08/hello-world/" title="Hello World"><img src="/img/cover_hello_world.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2024/06/08/hello-world/" title="Hello World">Hello World</a><time datetime="2024-06-08T11:30:14.495Z" title="发表于 2024-06-08 19:30:14">2024-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/08/node-java/" title="适用于 Android 的 Node.js 调用 Java 解决方案"><img src="/img/cover_node_java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="适用于 Android 的 Node.js 调用 Java 解决方案"/></a><div class="content"><a class="title" href="/2024/06/08/node-java/" title="适用于 Android 的 Node.js 调用 Java 解决方案">适用于 Android 的 Node.js 调用 Java 解决方案</a><time datetime="2024-06-08T11:30:14.495Z" title="发表于 2024-06-08 19:30:14">2024-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/08/webide-introduction/" title="“宇宙最强” IDE —— Web IDE"><img src="/img/cover_webide_introduction.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="“宇宙最强” IDE —— Web IDE"/></a><div class="content"><a class="title" href="/2024/06/08/webide-introduction/" title="“宇宙最强” IDE —— Web IDE">“宇宙最强” IDE —— Web IDE</a><time datetime="2024-06-08T10:24:06.222Z" title="发表于 2024-06-08 18:24:06">2024-06-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 苏沐橙好菜</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="喵？,喵喵？" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
